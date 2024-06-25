@@ -16,3 +16,18 @@ jobs:
       TEST_INPUT: ${{ inputs.test-input || false }}
     steps:
         - uses: hmarr/debug-action@v3
+        - name: Check like boolean
+          if: ${{ env.TEST_INPUT }}
+          shell: bash
+          run: |
+            echo "${{ env.TEST_INPUT }}"
+        - name: Check env.TEST_INPUT == 'true'
+          if: ${{ env.TEST_INPUT == 'true' }}
+          shell: bash
+          run: |
+            echo "${{ env.TEST_INPUT }}"
+        - name: Check env.TEST_INPUT == 'false'
+          if: ${{ env.TEST_INPUT == 'false' }}
+          shell: bash
+          run: |
+            echo "${{ env.TEST_INPUT }}"
