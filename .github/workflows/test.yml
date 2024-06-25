@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: large
     env:
       TEST_INPUT: ${{ inputs.test-input || false }}
     steps:
